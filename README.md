@@ -1,2 +1,4 @@
 # pva-ign
-basic downloader in less than 100 lines
+
+Basic PVA downloader for remonterletemps.ign.fr
+Would require additional work for errors handling. 
