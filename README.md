@@ -1,6 +1,6 @@
 # pva-ign
 
-Script basique de téléchargement des PVAs disponibles sur [remonterletemps.ign.fr](https://remonterletemps.ign.fr)\
+Script basique de téléchargement des PVAs disponibles sur [remonterletemps.ign.fr](https://remonterletemps.ign.fr)
 
 La zone de recherche est à définir au début du script `main.py`.
 L'option `intersects_only`, également présente en début de fichier, permet de ne télécharger que les PVAs intersectant la zone de recherche. Avec la valeur `False`, cette option provoque le téléchargement des missions dans leur intégralité.
