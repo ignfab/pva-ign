@@ -7,10 +7,12 @@ L'option `intersects_only`, également présente en début de fichier, permet de
 
 ## Usage
 
-`pip3 install -r requirements.txt`
-`python3 main.py`
+```
+pip3 install -r requirements.txt
+python3 main.py
+```
 
-Une interface en ligne de commande (utilisant [pick](https://github.com/wong2/pick)) permet de choisir la mission de son choix et de la télécharger. Sous windows, télécharger en plus : `pip3 install windows-curses`
+Une interface en ligne de commande (utilisant [pick](https://github.com/wong2/pick)) permet de choisir la mission de son choix et de la télécharger. Sous Windows, télécharger en plus : `pip3 install windows-curses`
 
 ## TODO
 
