@@ -1,1 +1,4 @@
 downloads/
+venv/
+*.kml
+*.jp2
