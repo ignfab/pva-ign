@@ -107,7 +107,7 @@ def intersects(poly_coords):
 
 
 def kml_walk(kml_id):
-    """Scan kml tree"""
+    """Scan kml tree to find aerial shots"""
     leaves = [kml_id+'.kml']
     jp2s_ids = []
     while leaves:
@@ -118,7 +118,7 @@ def kml_walk(kml_id):
 
 
 def get_leaves_and_jp2s(leaves_list):
-    """Scan kml leaves"""
+    """Scan kml leaves to get aerial shots download URLs"""
     leaves, jp2s = ([] for i in range(2))
     for l in leaves_list:
         context = l.rpartition('/')[0]+'/' if ('/' in l) else ''
@@ -155,18 +155,25 @@ def download(jp2s, mission_id):
 
 
 def main():
+    # Transform bounding box into polygon
     p = make_bbox_polygon()
+    # Get number of aerial surveys from WFS
     c = get_missions_count(p)
     if (int(c) > 100):
         print("More than 100 survey found. Please reduce bounding box.")
         sys.exit(0)
+    # Get list of aerial surveys from WFS
     m = get_missions(p)
+    # Display pick UI
     i = show_menu(m)
     print("Parsing KML files to get aerial shots download URLs. This could take some time.")
+    # Get URLs of aerial shots to download
     jp2s = kml_walk(m[i][1])
     print(str(len(jp2s)) +
           " aerial shots will be downloaded for IGNF survey " + str(m[i][1]))
+    # Download aerial shots in downloads/ local directory
     download(jp2s, m[i][1])
+
 
 if __name__ == "__main__":
     main()
